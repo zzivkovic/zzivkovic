@@ -1,0 +1,276 @@
+Sub Sort_by_store_number()
+'
+' Sort_by_store_number Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("YTD BY STORE").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("YTD BY STORE").Sort.SortFields.Add Key:=Range( _
+        "P15:P49"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("YTD BY STORE").Sort
+        .SetRange Range("O15:Q49")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub Sort_by_number_tours()
+'
+' Sort_by_number_tours Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("YTD BY STORE").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("YTD BY STORE").Sort.SortFields.Add Key:=Range( _
+        "O15:O49"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("YTD BY STORE").Sort
+        .SetRange Range("O15:Q49")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub Sort_by_average_score()
+'
+' Sort_by_average_score Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("YTD BY STORE").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("YTD BY STORE").Sort.SortFields.Add Key:=Range( _
+        "Q15:Q49"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("YTD BY STORE").Sort
+        .SetRange Range("O15:Q49")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub West_sort_by_number_tours()
+'
+' West_sort_by_number_tours Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("WEST DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("WEST DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "O15:O26"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("WEST DISTRICT").Sort
+        .SetRange Range("O15:Q26")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub Wst_sort_by_store_number()
+'
+' Wst_sort_by_store_number Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("WEST DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("WEST DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "P15:P26"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("WEST DISTRICT").Sort
+        .SetRange Range("O15:Q26")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub West_sort_by_average_score()
+'
+' West_sort_by_average_score Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("WEST DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("WEST DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "Q15:Q26"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("WEST DISTRICT").Sort
+        .SetRange Range("O15:Q26")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    ActiveWorkbook.Worksheets("WEST DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("WEST DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "Q15:Q26"), SortOn:=xlSortOnValues, Order:=xlDescending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("WEST DISTRICT").Sort
+        .SetRange Range("O15:Q26")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub Central_sort_by_number_tours()
+'
+' Central_sort_by_number_tours Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("CENTRAL DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("CENTRAL DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "O15:O26"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("CENTRAL DISTRICT").Sort
+        .SetRange Range("O15:Q26")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub Central_sort_by_store_number()
+'
+' Central_sort_by_store_number Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("CENTRAL DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("CENTRAL DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "P15:P26"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("CENTRAL DISTRICT").Sort
+        .SetRange Range("O15:Q26")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub Central_sort_by_average_score()
+'
+' Central_sort_by_average_score Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("CENTRAL DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("CENTRAL DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "Q15:Q26"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("CENTRAL DISTRICT").Sort
+        .SetRange Range("O15:Q26")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub East_sort_by_number_tours()
+'
+' East_sort_by_number_tours Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("EAST DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("EAST DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "O15:O25"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("EAST DISTRICT").Sort
+        .SetRange Range("O15:Q25")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub East_sort_by_store_number()
+'
+' East_sort_by_store_number Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("EAST DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("EAST DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "P15:P25"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("EAST DISTRICT").Sort
+        .SetRange Range("O15:Q25")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
+Sub East_sort_by_average_score()
+'
+' East_sort_by_average_score Macro
+'
+
+'
+    Range("O15:Q15").Select
+    Range(Selection, Selection.End(xlDown)).Select
+    ActiveWorkbook.Worksheets("EAST DISTRICT").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("EAST DISTRICT").Sort.SortFields.Add Key:=Range( _
+        "Q15:Q25"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal
+    With ActiveWorkbook.Worksheets("EAST DISTRICT").Sort
+        .SetRange Range("O15:Q25")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Range("A1:H1").Select
+End Sub
