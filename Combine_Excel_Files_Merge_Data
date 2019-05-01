@@ -1,0 +1,131 @@
+Sub mergeandcombine()
+    'Merges all files in a folder to a main file.
+      
+    'Define variables:
+    Dim numberOfFilesChosen, i As Integer
+    Dim tempFileDialog As FileDialog
+    Dim mainWorkbook, sourceWorkbook As Workbook
+    Dim tempWorkSheet As Worksheet
+    Dim j As Integer
+    Dim s As Worksheet
+    
+    Set mainWorkbook = Application.ActiveWorkbook
+    Set tempFileDialog = Application.FileDialog(msoFileDialogFilePicker)
+    
+    'Screen updating off
+    Application.ScreenUpdating = False
+    
+    'Allow the user to select multiple workbooks
+    tempFileDialog.AllowMultiSelect = True
+    
+    numberOfFilesChosen = tempFileDialog.Show
+    
+    'Loop through all selected workbooks
+    For i = 1 To tempFileDialog.SelectedItems.Count
+        
+        'Open each workbook, unlcok workbook and worksheet
+        Workbooks.Open tempFileDialog.SelectedItems(i)
+        Set sourceWorkbook = ActiveWorkbook
+        ActiveSheet.Unprotect "daricemarketing"
+        ActiveWorkbook.Unprotect "daricemarketing"
+                                   
+        
+        'Copy each visible worksheet to the end of the main workbook
+            For Each tempWorkSheet In sourceWorkbook.Worksheets
+            
+                If tempWorkSheet.Visible = True Then
+                   tempWorkSheet.Name = "PC STORE TOUR"
+                   tempWorkSheet.Copy after:=mainWorkbook.Sheets(mainWorkbook.Worksheets.Count)
+                End If
+            
+            Next
+    
+        'Close the source workbook
+        sourceWorkbook.Close savechanges:=False
+        
+        ActiveWorkbook.Worksheets(1).Activate
+                       
+    Next i
+    
+    Application.DisplayAlerts = False
+    ActiveWorkbook.Worksheets(1).Delete
+    
+    On Error Resume Next
+    Sheets(1).Select
+    Worksheets.Add ' add a sheet in first place
+    Sheets(1).Name = "Combined"
+    Application.DisplayAlerts = False
+    
+    ' copy headings
+    Sheets(2).Activate
+    Range("A1:O2").EntireRow.Select
+    Selection.Copy Destination:=Sheets(1).Range("A1")
+
+    For Each s In ActiveWorkbook.Sheets
+        If s.Name <> "Combined" Then
+            Application.Goto Sheets(s.Name).[a1]
+            Selection.Range("A3").EntireRow.Select
+            ' Don't copy the headings
+            Selection.Offset(1, 0).Resize(Selection.Rows.Count - 1).Select
+            Selection.Copy Destination:=Sheets("Combined"). _
+              Cells(Rows.Count, 1).End(xlUp)(2)
+        End If
+    Next
+             
+    'Select first sheet and format
+    ActiveWorkbook.Worksheets(1).Activate
+    Range("B:B").Delete
+    Columns("A").AutoFit
+    Columns("F").AutoFit
+    Columns("G").AutoFit
+    Range("A1").Select
+    Range("H1").EntireColumn.Insert
+    Range("H3").Select
+    ActiveCell.FormulaR1C1 = "=TEXT(RC[-1]-RC[-2], ""h:mm"")"
+    Range("H3").Select
+    Selection.AutoFill Destination:=Range("H3:H10")
+    Range("H3:H10").Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideVertical)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideHorizontal)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    Range("H2").Select
+    ActiveCell = "TOTAL TIME"
+    
+    
+    
+End Sub
